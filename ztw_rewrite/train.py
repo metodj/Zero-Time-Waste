@@ -58,7 +58,7 @@ def train(args):
         entity = os.environ['WANDB_ENTITY']
         project = os.environ['WANDB_PROJECT']
         run_id = get_run_id(run_name)
-        wandb.tensorboard.patch(root_logdir=str(run_dir.resolve()), tensorboardX=False, pytorch=True, save=False)
+        wandb.tensorboard.patch(root_logdir=str(run_dir.resolve()), tensorboard_x=False, pytorch=True, save=False)
         if run_id is not None:
             wandb.init(entity=entity, project=project, id=run_id, resume='must', dir=str(run_dir.resolve()))
         else:

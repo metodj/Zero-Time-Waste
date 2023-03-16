@@ -2,7 +2,7 @@ import os
 
 from torchvision import datasets, transforms
 
-DOWNLOAD = False
+DOWNLOAD = True
 
 
 def get_mnist():
