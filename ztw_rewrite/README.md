@@ -1,3 +1,12 @@
+# PoE setup
+- `conda create -n ztw_env python=3.8 swig=4.0.2`
+- `conda activate ztw_env`
+- `pip install -r requirements.txt`
+
+When installing torch best to use conda (to ensure GPU support works as expected): 
+
+`conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoolkit=11.3 -c pytorch -c conda-forge`
+
 # Description
 This is a rewrite of Zero Time Waste (ZTW) early exiting method. The code is shorter, clearer
 and should be more friendly for new users. Running one of the scripts from the `scripts` directory will
