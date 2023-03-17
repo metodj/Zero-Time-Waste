@@ -43,6 +43,13 @@ def get_predictions(args, run_name):
     return ee_preds, labels
 
 
+def get_predictions_for_model(_ee_model, _ee_state):
+    _, _, data = DATASETS_NAME_MAP[_ee_state['args'].dataset]()
+    dataloader = get_loader(data, _ee_state['args'].batch_size, shuffle=False)
+    ee_preds, labels = get_preds_earlyexiting(_ee_model, dataloader)
+    return ee_preds, labels
+
+
 def calculate_hindsight_improvability(ee_preds, labels):
     num_heads = len(ee_preds)
     improvabilities = torch.zeros(num_heads, dtype=torch.float)
